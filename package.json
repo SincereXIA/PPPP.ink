@@ -1,16 +1,14 @@
 {
-  "name": "sumbook",
+  "name": "PPPP.ink 粉墨",
   "version": "1.0.0",
-  "description": "book for sincerexia",
-  "main": "index.js",
+  "author": "reco_luan",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "docs:dev": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "dev": "vuepress dev . --open --host \"localhost\"",
+    "build": "vuepress build ."
   },
-  "author": "sincerexia",
-  "license": "ISC",
   "devDependencies": {
-    "vuepress": "^1.8.2"
-  }
+    "vuepress": "1.8.2",
+    "vuepress-theme-reco": "1.6.6"
+  },
+  "description": "PPPP.ink is Personal Private Playground"
 }
