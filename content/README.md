@@ -1,7 +1,7 @@
 ---
 home: true
 heroText: PPPP.ink 粉墨
-tagline: PPPP.ink is Personal Private Playground
+tagline: PPPP.ink is a Personal Private Playground
 # heroImage: /hero.png
 # heroImageStyle: {
 #   maxWidth: '600px',
@@ -12,7 +12,7 @@ tagline: PPPP.ink is Personal Private Playground
 #   borderRadius: '1rem',
 # }
 bgImageStyle: {
-  height: '450px'
+  height: '100vh'
 }
 isShowTitleInHome: false
 actionText: Guide

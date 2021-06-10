@@ -1,3 +1,9 @@
+const sortFn = (a, b) => {
+  const firstA = a.filename.split("-")[0]
+  const firstB = b.filename.split("-")[0]
+  return firstA > firstB ? 1 : -1
+}
+
 module.exports = {
   "title": "PPPP.ink 粉墨",
   "description": "PPPP.ink is Personal Private Playground",
@@ -20,29 +26,34 @@ module.exports = {
   ],
   "theme": "reco",
   "themeConfig": {
+    "subSidebar": 'auto',
     "nav": [
       {
-        "text": "Home",
+        "text": "主页",
         "link": "/",
         "icon": "reco-home"
       },
       {
-        "text": "TimeLine",
+        "text": "时光机",
         "link": "/timeline/",
         "icon": "reco-date"
       },
       {
-        "text": "Docs",
+        "text": "文档",
         "icon": "reco-message",
         "items": [
           {
             "text": "vuepress-reco",
             "link": "/docs/theme-reco/"
+          },
+          {
+            "text": "前端基础",
+            "link": "/docs/learn-frontend/"
           }
         ]
       },
       {
-        "text": "Contact",
+        "text": "联系",
         "icon": "reco-message",
         "items": [
           {
@@ -53,24 +64,30 @@ module.exports = {
         ]
       }
     ],
-    "sidebar": {
-      "/docs/theme-reco/": [
-        "",
-        "theme",
-        "plugin",
-        "api"
-      ]
-    },
+    // "sidebar": {
+    //   "/docs/theme-reco/": [
+    //     "",
+    //     "theme",
+    //     "plugin",
+    //     "api"
+    //   ],
+    //   "/docs/learn-frontend/" :[
+    //     "",
+    //   ]
+    // },
     "type": "blog",
     "blogConfig": {
       "category": {
         "location": 2,
-        "text": "Category"
+        "text": "分类"
       },
       "tag": {
         "location": 3,
-        "text": "Tag"
-      }
+        "text": "标签"
+      },
+      "socialLinks": [     // 信息栏展示社交信息
+        { icon: 'reco-github', link: 'https://github.com/SincereXIA' },
+      ]
     },
     "friendLink": [
       {
@@ -103,5 +120,22 @@ module.exports = {
   },
   "markdown": {
     "lineNumbers": true
+  },
+  "plugins": {
+    'permalink-pinyin':{},
+    "vuepress-plugin-auto-sidebar": {
+      // options
+      sort: {
+        mode: 'custom',
+        fn: sortFn
+      },
+      sidebarDepth: 2,
+      ignore: [
+        {
+          menu: "/blogs/diary/2021/",
+          regex: ".*"
+        }
+      ]
+    }
   }
 }
