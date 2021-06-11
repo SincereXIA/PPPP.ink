@@ -39,4 +39,16 @@ jobs:
         run: |
           npm run build
           ls ./public
+          
+      - name: copy file via ssh key
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.DEPLY_HOST }}
+          username: ${{ secrets.DEPLY_USERNAME }}
+          port: ${{ secrets.DEPLY_PORT }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "public"
+          target: "/home/wwwroot/pppp.ink/public"
+
+
 
