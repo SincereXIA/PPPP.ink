@@ -47,8 +47,9 @@ jobs:
           username: ${{ secrets.DEPLY_USERNAME }}
           port: ${{ secrets.DEPLY_PORT }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          rm: true
           source: "public"
-          target: "/home/wwwroot/pppp.ink/public"
+          target: "/home/wwwroot/pppp.ink/"
 
 
 
