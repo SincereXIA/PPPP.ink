@@ -156,13 +156,15 @@ function myFunction(a, b) { return a * b;}
   var x2=34;         //不使用小数点来写
   ```
 
+- 取整数： `parseInt(3.14)`
+
 #### 布尔
 
 - 两个值：true 或 false。
 
 #### 数组
 
-```
+``` JavaScript
 var cars=new Array();
 cars[0]="Saab";
 cars[1]="Volvo";
@@ -171,6 +173,14 @@ cars[2]="BMW";
 var cars=new Array("Saab","Volvo","BMW");
 var cars=["Saab","Volvo","BMW"];
 ```
+
+- 获取数组长度：
+  
+  ``` JavaScript
+  var a = [];  //声明空数组
+  a[100] = 2;
+  console.log(a.length);  //返回101
+  ```
 
 #### 对象
 
