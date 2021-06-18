@@ -182,6 +182,24 @@ var cars=["Saab","Volvo","BMW"];
   console.log(a.length);  //返回101
   ```
 
+- 遍历数组：
+
+  ```javascript
+  for (x in person)  // x 为属性名
+  {
+      txt=txt + person[x];
+  }
+  
+  for (const v of arr) {
+      console.log(v);
+  }
+  
+  arr.forEach((v, i) => console.log(v));
+  
+  ```
+
+  
+
 #### 对象
 
 - 定义：
