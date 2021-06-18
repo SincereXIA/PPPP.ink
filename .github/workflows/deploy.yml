@@ -45,7 +45,7 @@ jobs:
         with:
           switches: -avzr --delete
           path: public/
-          remote_path: /home/wwwroot/pppp.ink/
+          remote_path: /home/wwwroot/pppp.ink/public/
           remote_host: ${{ secrets.DEPLY_HOST }}
           remote_user: ${{ secrets.DEPLY_USERNAME }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }} 
