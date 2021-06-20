@@ -134,6 +134,9 @@ module.exports = {
           regex: ".*"
         }
       ]
+    },
+    '@maginapp/katex': {
+      delimiters: 'dollars'
     }
   }
 }
