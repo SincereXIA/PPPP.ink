@@ -91,16 +91,10 @@ module.exports = {
     },
     "friendLink": [
       {
-        "title": "午后南杂",
-        "desc": "Enjoy when you can, and endure when you must.",
-        "email": "1156743527@qq.com",
-        "link": "https://www.recoluan.com"
-      },
-      {
-        "title": "vuepress-theme-reco",
-        "desc": "A simple and beautiful vuepress Blog & Doc theme.",
-        "avatar": "https://vuepress-theme-reco.recoluan.com/icon_vuepress_reco.png",
-        "link": "https://vuepress-theme-reco.recoluan.com"
+        "title": "朝霞换夕阳",
+        "desc": "蜉蝣天地，沧海一粟",
+        "email": "",
+        "link": "https://www.mornw.com/"
       }
     ],
     "logo": "/logo.png",
@@ -116,7 +110,11 @@ module.exports = {
     cyberSecurityLink: '公安部备案指向链接',
     // 项目开始时间，只填写年份
     startYear: '2020',
-    huawei: true
+    repo: 'SincereXIA/PPPP.ink',
+    docsDir: 'content',
+    docsBranch: 'main',
+    editLinks: true,
+    mode: 'light',
   },
   "markdown": {
     "lineNumbers": true
