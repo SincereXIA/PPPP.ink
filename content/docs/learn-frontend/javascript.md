@@ -14,7 +14,7 @@ lastmod: 2021-06-08T12:59:08.520Z
 
 - HTML 元素添加事件属性
 
-  ```
+  ```html
   <some-HTML-element some-event='JavaScript 代码'>
   <some-HTML-element some-event="JavaScript 代码">
   <button onclick="getElementById('demo').innerHTML=Date()">现在的时间是?</button>
@@ -35,7 +35,7 @@ lastmod: 2021-06-08T12:59:08.520Z
 
 JavaScript 中，常量（固定值）被称为字面量：
 
-```
+```javascript
 3.14
 1001
 123e5
@@ -76,7 +76,7 @@ function myFunction(a, b) { return a * b;}
 
 - **js 拥有动态类型，相同的变量，可以用作不同的类型：**
 
-  ```
+  ```html
   var x;               // x 为 undefined
   var x = 5;           // 现在 x 为数字
   var x = "John";      // 现在 x 为字符串
@@ -84,7 +84,7 @@ function myFunction(a, b) { return a * b;}
 
 - 可以使用 new 来声明类型
 
-  ```
+  ```javascript
   var carname=new String;
   var x=      new Number;
   var y=      new Boolean;
@@ -96,7 +96,7 @@ function myFunction(a, b) { return a * b;}
 
 - 你可以使用 typeof 操作符来检测变量的数据类型。
 
-  ```
+  ```javascript
   typeof {name:'John', age:34} == "object"
   
   typeof undefined             // undefined
@@ -104,9 +104,7 @@ function myFunction(a, b) { return a * b;}
   null === undefined           // false
   null == undefined            // true
   ```
-
   
-
 #### 字符串
 
 - 可以使用单引号或双引号
@@ -145,13 +143,11 @@ function myFunction(a, b) { return a * b;}
 
   :::
 
-
-
 #### 数字 Num
 
 - JavaScript **只有一种数字类型**
 
-  ```
+  ```javascript
   var x1=34.00;      //使用小数点来写
   var x2=34;         //不使用小数点来写
   ```
@@ -198,13 +194,11 @@ var cars=["Saab","Volvo","BMW"];
   
   ```
 
-  
-
 #### 对象
 
 - 定义：
 
-  ```
+  ```javascript
   var person={
   firstname : "John",
   lastname  : "Doe",
@@ -214,7 +208,7 @@ var cars=["Saab","Volvo","BMW"];
 
 - 寻址：
 
-  ```
+  ```javascript
   name=person.lastname;
   name=person["lastname"];
   ```
@@ -227,7 +221,7 @@ var cars=["Saab","Volvo","BMW"];
 
   - 创建对象方法
 
-    ```
+    ```javascript
     var person={
     firstname : "John",
     methodName : function() {
@@ -243,7 +237,7 @@ var cars=["Saab","Volvo","BMW"];
 
 Number() 转换为数字， String() 转换为字符串， Boolean() 转换为布尔值。
 
-```
+```javascript
 String(123)       // 将数字 123 转换为字符串并返回
 (123).toString()
 
@@ -251,8 +245,6 @@ Number("3.14")    // 返回 3.14
 var y = "5";      // y 是一个字符串
 var x = + y;      // x 是一个数字
 ```
-
-
 
 ## 函数
 
@@ -264,10 +256,6 @@ function myFunction(a, b) {
 
 - 在 JavaScript 函数内部声明的变量（使用 var）是*局部*变量，所以只能在函数内部访问它
 - 在函数外声明的变量是*全局*变量，网页上的所有脚本和函数都能访问它。
-
-
-
-
 
 ## 流程控制
 
