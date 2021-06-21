@@ -24,10 +24,8 @@
           </p>
         </ModuleTransition>
 
-        <ModuleTransition delay="0.08">
-          <a  class="anchor-down" id="JanchorDown" >
-          </a>
-        </ModuleTransition>
+	<a  class="anchor-down" id="JanchorDown" @click="scrollFn">
+	</a>
       </div>
     </div>
 
