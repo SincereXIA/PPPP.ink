@@ -34,6 +34,14 @@ jobs:
         if: steps.npm-cache.outputs.cache-hit != 'true'
         run: npm ci
 
+      # 加载秘钥
+      - name: Create Secret
+        run: |
+          export secretJs=${{ secrets.SECRET_JS }}
+          chmod +x ./script/loadSecret.sh
+          ./script/loadSecret.sh
+          cat content/.vuepress/secret.js
+
       # 运行构建脚本
       - name: Build VuePress site
         run: |

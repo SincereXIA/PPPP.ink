@@ -1,4 +1,5 @@
 const path = require('path')
+const secret = require('./secret.js')
 const sortFn = (a, b) => {
   if (a.filename.search("README") != -1) {
     return -1
@@ -123,6 +124,10 @@ module.exports = {
     docsBranch: 'main',
     editLinks: true,
     mode: 'light',
+    valineConfig: {
+      appId: 'vzuuxzwzT439zjrqDAdnfQdS-gzGzoHsz',
+      appKey: secret.valineAppKey
+    }
   },
   "markdown": {
     "lineNumbers": true
