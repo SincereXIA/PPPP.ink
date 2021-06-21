@@ -137,6 +137,17 @@ module.exports = {
     },
     '@maginapp/katex': {
       delimiters: 'dollars'
-    }
+    },
+    "md-enhance":
+    {
+      // 配置选项
+      // 开启标记
+      mark: true,
+      //tex: true,
+      // 启用下角标功能
+      sub: true,
+      // 启用上角标
+      sup: true,
+    },
   }
 }
