@@ -15,7 +15,7 @@ bgImageStyle: {
   height: '100vh'
 }
 isShowTitleInHome: false
-actionText: Guide
+actionText: Read
 actionLink: /views/other/guide
 features:
 - title: PPPP.ink 粉墨

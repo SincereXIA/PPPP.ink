@@ -8,6 +8,7 @@
   },
   "devDependencies": {
     "@maginapp/vuepress-plugin-katex": "^1.0.11",
+    "@vuepress/plugin-register-components": "^1.8.2",
     "vuepress": "1.8.2",
     "vuepress-plugin-auto-sidebar": "^2.2.3",
     "vuepress-plugin-md-enhance": "^1.18.2",

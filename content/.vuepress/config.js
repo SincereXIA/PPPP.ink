@@ -1,3 +1,4 @@
+const path = require('path')
 const sortFn = (a, b) => {
   const firstA = a.filename.split("-")[0]
   const firstB = b.filename.split("-")[0]
@@ -26,6 +27,7 @@ module.exports = {
   ],
   "theme": "reco",
   "themeConfig": {
+    "type": 'HomePageOne',
     "subSidebar": 'auto',
     "nav": [
       {
@@ -75,7 +77,7 @@ module.exports = {
     //     "",
     //   ]
     // },
-    "type": "blog",
+    //"type": "blog",
     "blogConfig": {
       "category": {
         "location": 2,
@@ -120,6 +122,15 @@ module.exports = {
     "lineNumbers": true
   },
   "plugins": {
+    '@vuepress/plugin-register-components': {
+      components: [
+        {
+          name: 'reco-home-page-one',
+          path: path.resolve(__dirname, './components/HomePageOne.vue')
+        }
+      ],
+      componentsDir: path.resolve(__dirname, './demo')
+    },
     'permalink-pinyin':{},
     "vuepress-plugin-auto-sidebar": {
       // options
