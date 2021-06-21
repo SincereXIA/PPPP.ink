@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [ -z "$secretJs" ]; then
+if [ -n "$secretJs" ]; then
 cat>content/.vuepress/secret.js<<EOF 
 $secretJs
 EOF
