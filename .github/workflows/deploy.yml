@@ -37,7 +37,7 @@ jobs:
       # 加载秘钥
       - name: Create Secret
         run: |
-          export secretJs=${{ secrets.SECRET_JS }}
+          export secretJs='${{ secrets.SECRET_JS }}'
           chmod +x ./script/loadSecret.sh
           ./script/loadSecret.sh
           cat content/.vuepress/secret.js
