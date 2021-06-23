@@ -111,7 +111,7 @@ module.exports = {
     "searchMaxSuggestions": 10,
     "lastUpdated": "Last Updated",
     "author": "SincereXIA",
-    "authorAvatar": "/avatar.png",
+    "authorAvatar": "/avatar.jpeg",
     // 备案
     record: '陕ICP备16018536号-2',
     recordLink: 'https://beian.miit.gov.cn/',
