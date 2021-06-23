@@ -106,7 +106,7 @@ module.exports = {
         "link": "https://www.mornw.com/"
       }
     ],
-    "logo": "/logo.png",
+    //"logo": "/logo.png", // 顶栏左上角 logo
     "search": true,
     "searchMaxSuggestions": 10,
     "lastUpdated": "Last Updated",
