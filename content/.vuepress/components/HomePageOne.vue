@@ -145,13 +145,15 @@ export default defineComponent({
     h1 {
       display: block;
       margin:0 auto 1.8rem;
-      font-size: 2.5rem;
+      font-size: 3.5rem;
+      color: rgba(255, 255, 255, 0.8)
     }
 
     .description {
       margin: 1.8rem auto;
       font-size: 1.6rem;
       line-height: 1.3;
+      color: rgba(255, 255, 255, 0.8)
     }
   }
   .home-blog-wrapper {
@@ -337,8 +339,10 @@ export default defineComponent({
   width: 20px;
   height: 20px;
   display: block;
-  border-right: 3px solid var(--text-color);
-  border-top: 3px solid var(--text-color);
+  // border-right: 3px solid var(--text-color);
+  // border-top: 3px solid var(--text-color);
+  border-right: 3px solid rgba(255, 255, 255, 0.8);
+  border-top: 3px solid rgba(255, 255, 255, 0.8);
   transform: rotate(135deg);
   position: absolute;
   bottom: 10px;
@@ -348,8 +352,11 @@ export default defineComponent({
   width: 20px;
   height: 20px;
   display: block;
-  border-right: 3px solid var(--text-color);
-  border-top: 3px solid var(--text-color);
+  // border-right: 3px solid var(--text-color);
+  // border-top: 3px solid var(--text-color);
+  border-right: 3px solid rgba(255, 255, 255, 0.8);
+  border-top: 3px solid rgba(255, 255, 255, 0.8);
+
   transform: rotate(135deg);
 }
 </style>

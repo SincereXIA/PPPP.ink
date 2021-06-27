@@ -11,6 +11,7 @@ tagline: PPPP.ink is a Personal Private Playground
 #   background: '#fff',
 #   borderRadius: '1rem',
 # }
+bgImage: '/0.jpg'
 bgImageStyle: {
   height: '100vh'
 }

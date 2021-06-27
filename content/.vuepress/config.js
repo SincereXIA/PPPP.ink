@@ -124,7 +124,7 @@ module.exports = {
     docsDir: 'content',
     docsBranch: 'main',
     editLinks: true,
-    mode: 'light',
+    mode: 'auto',
     // valineConfig: {
     //   appId: 'vzuuxzwzT439zjrqDAdnfQdS-gzGzoHsz',
     //   appKey: secret.valineAppKey
