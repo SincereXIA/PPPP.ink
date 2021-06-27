@@ -71,7 +71,8 @@ module.exports = {
             "icon": "reco-github"
           }
         ]
-      }
+      },
+      { text: '订阅', link: 'https://www.pppp.ink/rss.xml', icon: 'reco-rss'},
     ],
     // "sidebar": {
     //   "/docs/theme-reco/": [
@@ -133,6 +134,9 @@ module.exports = {
     "lineNumbers": true
   },
   "plugins": {
+    '@vuepress-reco/rss': {
+      site_url: 'https://www.pppp.ink',
+    },
     '@vuepress/plugin-register-components': {
       components: [
         {
