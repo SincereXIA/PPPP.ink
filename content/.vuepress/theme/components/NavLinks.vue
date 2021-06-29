@@ -125,15 +125,15 @@ export default defineComponent({
         })
       })
     })
-
+    //去掉 顶栏 github 链接
     const repoLink = computed(() => {
       const { repo } = instance.$themeConfig
 
-      if (repo) {
-        return /^https?:/.test(repo)
-          ? repo
-          : `https://github.com/${repo}`
-      }
+      // if (repo) {
+      //   return /^https?:/.test(repo)
+      //     ? repo
+      //     : `https://github.com/${repo}`
+      // }
 
       return ''
     })
