@@ -8,9 +8,13 @@ tags:
         - blog
 ---
 
+部署好 Valine Admin 为什么无法进入后台，为什么总是重定向到 https 链接？真相只有一个！
+<!-- more -->
+
 ## 起因
 
 最近使用 Valine 评论系统，发现不支持评论验证码和反垃圾功能，于是需要为 Valine 增加一个管理后台——[Valine Admin](https://github.com/DesertsP/Valine-Admin)
+
 
 ## 问题描述
 
@@ -20,6 +24,7 @@ tags:
 > 首先需要设置管理员信息。访问管理员注册页面 <https://云引擎域名/sign-up>，注册管理员登录信息，如：<https://deserts-io.avosapps.us/sign-up>
 
 问题表现如下：
+
 ![2021-06-29-1624928829-iLfeUR](https://static.sumblog.cn/Pic/2021-06-29-1624928829-iLfeUR.png)
 
 当访问 Valine Admin 后台时，不断重定向到 https 协议访问链接，即使是使用 https 协议直接访问也是如此。
