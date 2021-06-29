@@ -179,5 +179,8 @@ module.exports = {
       // 启用上角标
       sup: true,
     },
+    "sitemap": {
+      hostname: 'https://pppp.ink'
+    }
   }
 }

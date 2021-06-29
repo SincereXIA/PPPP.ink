@@ -22,6 +22,10 @@
       <reco-icon icon="reco-theme" />
       <a target="blank" href="https://vuepress-theme-reco.recoluan.com"> reco </a>
     </span> -->
+    <span>
+      <reco-icon icon="fa-sitemap" />
+      <a target="blank" href="https://pppp.ink/sitemap.xml"> SiteMap</a>
+    </span> 
     <p class="cyber-security" v-if="$themeConfig.cyberSecurityRecord">
       <img src="https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png" alt="">
       <a :href="$themeConfig.cyberSecurityLink || '#'">{{ $themeConfig.cyberSecurityRecord }}</a>
