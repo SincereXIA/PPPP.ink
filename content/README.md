@@ -21,4 +21,5 @@ actionLink: /views/other/guide
 features:
 - title: PPPP.ink 粉墨
   details: PPPP.ink is Personal Private Playground
+permalink: /
 ---

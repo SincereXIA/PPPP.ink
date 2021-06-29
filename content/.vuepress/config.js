@@ -127,7 +127,11 @@ module.exports = {
     mode: 'auto',
     valineConfig: {
       appId: 'vzuuxzwzT439zjrqDAdnfQdS-gzGzoHsz',
-      appKey: secret.valineAppKey
+      appKey: secret.valineAppKey,
+      recordIP: true,
+      enableQQ: true,
+      requiredFields: ['nick'],
+      verify: true,
     }
   },
   "markdown": {
