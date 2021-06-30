@@ -58,6 +58,10 @@ module.exports = {
           {
             "text": "前端基础",
             "link": "/docs/learn-frontend/"
+          },
+          {
+            "text": "golang",
+            "link": "/docs/golang/"
           }
         ]
       },
