@@ -56,3 +56,74 @@ func (jsi *JointStorageInterface) GetMethod(c *gin.Context) {
 ```
 
 手动对匹配到的参数进行判断，并进行分流。
+
+## 使用 Go 通过 http 发送文件
+
+1. 使用 request.Body 直接发送：
+
+   ```go
+   func TestJointStorageInterface_PutObject(t *testing.T) {
+   	bodyBuf := new(bytes.Buffer)
+   	fh, err := os.Open("../test/test.txt")
+   	if err != nil {
+   		t.Errorf("error opening file")
+   	}
+   	io.Copy(bodyBuf, fh)
+   	req, err := http.NewRequest("PUT", "/test.txt", bodyBuf)
+   	recorder := httptest.NewRecorder()
+   	JSI.ServeHTTP(recorder, req)
+   	if recorder.Code != http.StatusOK {
+   		t.Fatalf("http code incorrect")
+   	}
+   }
+   ```
+
+2. 使用 Multipart form 表单发送：
+
+   ```go
+   func postFile(filename string, filepath string, target_url string, token string) (*http.Request, error) {
+   	body_buf := bytes.NewBufferString("")
+   	body_writer := multipart.NewWriter(body_buf)
+   
+   	// use the body_writer to write the Part headers to the buffer
+   	writer, _ := body_writer.CreateFormField("token")
+   	writer.Write([]byte(token))
+   	_, err := body_writer.CreateFormFile("file", filename)
+   	if err != nil {
+   		fmt.Println("error writing to buffer")
+   		return nil, err
+   	}
+   
+   	// the file data will be the second part of the body
+   	fh, err := os.Open(filepath)
+   	if err != nil {
+   		fmt.Println("error opening file")
+   		return nil, err
+   	}
+   	// need to know the boundary to properly close the part myself.
+   	boundary := body_writer.Boundary()
+   	//close_string := fmt.Sprintf("\r\n--%s--\r\n", boundary)
+   	close_buf := bytes.NewBufferString(fmt.Sprintf("\r\n--%s--\r\n", boundary))
+   
+   	// use multi-reader to defer the reading of the file data until
+   	// writing to the socket buffer.
+   	request_reader := io.MultiReader(body_buf, fh, close_buf)
+   	fi, err := fh.Stat()
+   	if err != nil {
+   		fmt.Printf("Error Stating file: %s", filename)
+   		return nil, err
+   	}
+   	req, err := http.NewRequest("POST", target_url, request_reader)
+   	if err != nil {
+   		return nil, err
+   	}
+   
+   	// Set headers for multipart, and Content Length
+   	req.Header.Add("Content-Type", "multipart/form-data; boundary="+boundary)
+   	req.ContentLength = fi.Size() + int64(body_buf.Len()) + int64(close_buf.Len())
+   	return req, nil
+   }
+   ```
+
+   
+
