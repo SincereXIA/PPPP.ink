@@ -10,6 +10,8 @@ tags:
 
 推荐一个生成网站 favicon 的好工具：<https://realfavicongenerator.net/>
 
+<!-- more -->
+
 ## favicon 制作
 
 该网站支持各个平台 favicon 的生成，甚至支持效果预览：
