@@ -60,7 +60,7 @@ draft: false
    ```
 
 3. 对于一个具体的类，在初始化时，对实例变量进行初始化
- 
+
    ```java
    public class MallardDuck extends Duck {
        public MallardDuck() {
