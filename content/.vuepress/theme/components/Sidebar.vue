@@ -2,7 +2,7 @@
   <aside class="sidebar">
     <slot name="top"/>
     <NavLinks/>
-    <SidebarLinks :depth="0" :items="items"/>
+    <SidebarLinks :depth="2" :items="items"/>
     <slot name="bottom"/>
   </aside>
 </template>
