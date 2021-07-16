@@ -1,15 +1,11 @@
 const path = require('path')
 const secret = require('./secret.js')
 const sortFn = (a, b) => {
-  if (a.filename.search("README") != -1) {
-    return -1
-  }
-  if (b.filename.search("README") != -1) {
-    return -1
-  }
   const firstA = a.filename.split("-")[0]
   const firstB = b.filename.split("-")[0]
-  return firstA > firstB ? 1 : -1
+  numA = parseInt(firstA)
+  numB = parseInt(firstB)
+  return numA > numB ? 1 : -1
 }
 
 module.exports = {
@@ -162,13 +158,15 @@ module.exports = {
         mode: 'custom',
         fn: sortFn
       },
-      sidebarDepth: 2,
-      ignore: [
-        {
-          menu: "/blogs/diary/2021/",
-          regex: ".*"
-        }
-      ]
+      sidebarDepth: 1,
+      readmeFirstForce: true,
+      mode: "titlecase"
+      // ignore: [
+      //   {
+      //     menu: "/blogs/diary/2021/",
+      //     regex: ".*"
+      //   }
+      // ]
     },
     '@maginapp/katex': {
       delimiters: 'dollars'
