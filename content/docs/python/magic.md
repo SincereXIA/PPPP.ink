@@ -1,7 +1,7 @@
 ---
 title: Python Magic Methods
 date: 2021-06-30T08:52:47.887Z
-lastmod: 2021-06-30T08:52:49.305Z
+lastmod: '2021-09-01T01:39:36.009Z'
 draft: false
 ---
 
