@@ -1,8 +1,9 @@
 ---
 title: 刷题之 - 模拟、数学、博弈
 date: '2021-09-17T11:43:09.007Z'
-lastmod: '2021-09-18T01:41:44.015Z'
+lastmod: '2021-09-22T08:28:46.652Z'
 draft: true
+publish: false
 ---
 
 ## 博弈

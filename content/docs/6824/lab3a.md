@@ -5,6 +5,7 @@ draft: true
 keywords:
     - '6.824'
     - 分布式
+publish: false
 ---
 
 
