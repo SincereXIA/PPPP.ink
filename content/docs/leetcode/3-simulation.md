@@ -1,7 +1,7 @@
 ---
 title: 刷题之 - 模拟、数学、博弈
 date: '2021-09-17T11:43:09.007Z'
-lastmod: '2021-09-26T02:52:07.950Z'
+lastmod: '2021-10-08T02:52:16.897Z'
 draft: true
 publish: false
 ---
@@ -135,4 +135,45 @@ int getSum(int a, int b)
     }
     return sum;
 }
+```
+
+## 哈希表
+
+### 重复的 DNA 序列 —— 寻找固定长度的重复子串
+
+> 编写一个函数来找出所有目标子串，目标子串的长度为 10，且在 DNA 字符串 s 中出现次数超过一次。
+
+- LeetCode [187. 重复的DNA序列](https://leetcode-cn.com/problems/repeated-dna-sequences/)
+- 难度：中等 :yellow_circle:
+- 题解思路：
+  - 哈希表，滑动窗口，窗口每次循环右移一位，出现在窗口中的字符串加入哈希表统计次数
+  - 降低空间复杂度：将窗口内的字符串转换为二进制，用一个数字来代替整个字符串
+- 遇到的问题：
+  - 无
+
+> **如何使用位运算截取数字的二进制位** : `n = n & ( (1 << k) - 1 )` ，k 为需要截取后 k 位
+
+- 代码：
+
+```python
+TO_BIN = {'A': 0, 'T': 1, 'C': 2, 'G': 3}
+
+class Solution:
+    def findRepeatedDnaSequences(self, s: str) -> List[str]:
+        i = 0
+        wind = s[i:i+9]
+        wind_bin = 0
+        for w in wind:
+            wind_bin = (wind_bin << 2) | TO_BIN[w]
+        count = defaultdict(int)
+        i = 9
+        rs = []
+        while i < len(s):
+            w = s[i]
+            wind_bin = ((wind_bin << 2) | TO_BIN[w]) & ( (1 << 20) - 1 )
+            i += 1
+            count[wind_bin] += 1
+            if count[wind_bin] == 2:
+                rs.append(s[i-10:i])
+        return rs
 ```
