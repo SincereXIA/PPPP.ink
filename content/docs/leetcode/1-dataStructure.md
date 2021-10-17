@@ -1,7 +1,7 @@
 ---
 title: 刷题之 - 数据结构
 date: '2021-09-17T11:43:09.007Z'
-lastmod: '2021-09-22T08:29:45.968Z'
+lastmod: '2021-10-17T02:05:43.543Z'
 draft: true
 publish: false
 ---
@@ -25,6 +25,7 @@ publish: false
 - 遇到的问题
   - 没有考虑到子节点对外提供的最大贡献值为负数的情况
 - 代码实现
+
 ```java
 class Solution {
     Integer max  = null;
@@ -57,4 +58,56 @@ class Solution {
         return max > pathSum ? max : pathSum;
     }
 }
+```
+
+### 二叉搜索树中第 k 小的元素
+
+- LeetCode 地址： [230. 二叉搜索树中第K小的元素](https://leetcode-cn.com/problems/kth-smallest-element-in-a-bst/)
+- 难度：中等
+- 标签：二叉树 中序遍历
+- 题解思路
+  - 因为二叉搜索树和中序遍历的性质，所以二叉搜索树的中序遍历是按照键增加的顺序进行的。于是，我们可以通过中序遍历找到第 kk 个最小元素。
+- 遇到的问题
+  - 使用迭代而不是递归，可以在找到答案后停止，不需要遍历整棵树
+  - 没有想到中序遍历，而是复杂的使用了深度搜索
+- 代码实现
+
+```python
+# 深度搜索
+class Solution:
+    def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
+        global rs
+        rs = -1
+        def find(root, fk):
+            if not root.left:
+                mk = fk + 1
+            else:
+                mk = find(root.left, fk) + 1
+            if mk == k:
+                global rs
+                rs = root.val
+                tk = mk
+            if mk < k:
+                if root.right:
+                    tk = find(root.right, mk)
+            else:
+                tk = mk
+            return tk
+        find(root, 0)
+        return rs
+
+# 中序遍历解法
+class Solution:
+    def kthSmallest(self, root: TreeNode, k: int) -> int:
+        stack = []
+        while root or stack:
+            while root:
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            k -= 1
+            if k == 0:
+                return root.val
+            root = root.right
+
 ```
