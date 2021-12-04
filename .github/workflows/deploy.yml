@@ -47,6 +47,7 @@ jobs:
       - name: Submodule Init
         run: |
           ssh-agent bash
+          eval `ssh-agent -s`
           echo "${{ secrets.PPPP_INK_PRIVATE_KEY }}" > deploy_key
           chmod 600 ./deploy_key
           ssh-add deploy_key
