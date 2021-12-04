@@ -70,6 +70,11 @@ jobs:
           remote_host: ${{ secrets.DEPLY_HOST }}
           remote_user: ${{ secrets.DEPLY_USERNAME }}
           remote_key: ${{ secrets.SSH_PRIVATE_KEY }} 
+      
+      - name: Refresh CDN
+        working-directory: ${{github.workspace}}/.github
+        run: |
+          python tools.py RefreshCdnDir -u  AKIDwg9LHxNVO0LPDk0ziBMGtFK8eutakcEZ -p 6vTkkTyC9oCKAk36rLYU9XdS1IL8etrY --dirs https://pppp.ink/
 
 
 
