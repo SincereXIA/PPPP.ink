@@ -46,7 +46,7 @@ jobs:
 
       - name: Submodule Init
         run: |
-          echo ${{ secrets.PPPP_INK_PRIVATE_KEY }} > deploy_key
+          echo "${{ secrets.PPPP_INK_PRIVATE_KEY }}" > deploy_key
           ssh-add deploy_key
           ssh-add -l
           git submodule init
