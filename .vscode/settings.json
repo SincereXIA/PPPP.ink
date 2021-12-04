@@ -2,5 +2,7 @@
 	"cSpell.words": [
 		"lastmod"
 	],
-	"frontMatter.content.autoUpdateDate": true
+	"frontMatter.content.autoUpdateDate": true,
+	"[markdown]": {
+	}
 }
