@@ -1,7 +1,7 @@
 ---
 title: 刷题之 - 算法
 date: '2021-09-17T11:43:09.007Z'
-lastmod: '2021-12-04T08:32:52.297Z'
+lastmod: '2021-12-07T12:20:08.224Z'
 draft: true
 publish: false
 ---
@@ -63,4 +63,56 @@ class Solution {
         return rs;
     }
 }
+```
+
+## 深度优先搜索
+
+### 边界着色
+
+> 二维矩阵表示一个图，给出图中一个坐标，用给定颜色为连通分量的边界着色。
+
+- LeetCode 地址： [1034. 边框着色](https://leetcode-cn.com/problems/coloring-a-border/)
+- 难度：中等 :yellow_circle: 
+- 题解思路：
+  - 深度优先搜索或广度优先搜索
+- 遇到的问题：
+  - 标记边界之后，不能直接退出，防止出现起始点就是边界的情况
+  - 可以在递归调用之前，先标记已经访问过
+- 代码实现：
+
+```python
+class Solution:
+    def colorBorder(self, grid: List[List[int]], row: int, col: int, color: int) -> List[List[int]]:
+        dr = [-1, 1, 0, 0]
+        dc = [0, 0, -1, 1]
+
+        def out_edge(x, y):
+            if x < 0 or y < 0 or x >= len(grid) or y >= len(grid[0]):
+                return True
+            return False
+
+        def dfs(visit, row: int, col: int, color: int, new_color: int):
+            if out_edge(row, col) or visit[row][col]:
+                return
+            pc = grid[row][col]
+            if pc != color:
+                return
+            visit[row][col] = 1
+            for i in range(4):
+                x = row + dr[i]
+                y = col + dc[i]
+                if out_edge(x, y) or (not visit[x][y] and grid[x][y] != color):
+                    grid[row][col] = new_color
+                    break
+
+            for i in range(4):
+                x = row + dr[i]
+                y = col + dc[i]
+                dfs(visit, x, y, color, new_color)
+        
+        visit = [ [0 for _ in grid[0]] for _ in grid ]
+        new_color = color
+        color = grid[row][col]
+        dfs(visit, row, col, color, new_color)
+        return grid
 ```
