@@ -74,7 +74,8 @@ jobs:
       - name: Refresh CDN
         working-directory: ${{github.workspace}}/.github
         run: |
-          python tools.py RefreshCdnDir -u  AKIDwg9LHxNVO0LPDk0ziBMGtFK8eutakcEZ -p 6vTkkTyC9oCKAk36rLYU9XdS1IL8etrY --dirs https://pppp.ink/
-
-
+          pip install tccli
+          export TENCENTCLOUD_SECRET_ID=${{ secrets.TENCENTCLOUD_SECRET_ID }}
+          export TENCENTCLOUD_SECRET_KEY=${{ secrets.TENCENTCLOUD_SECRET_KEY }}
+          tccli cdn PurgePathCache --cli-unfold-argument --Paths https://pppp.ink https://www.pppp.ink --FlushType flush
 
