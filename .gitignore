@@ -5,3 +5,4 @@ yarn.error
 package-lock.json
 /public
 /content/.vuepress/secret.js
+/content/private
