@@ -45,7 +45,7 @@
         <div class="blog-list">
           <!-- 博客列表 -->
           <note-abstract
-            :data="$recoPosts"
+            :data="$recoHomePosts"
             @paginationChange="paginationChange"
           />
         </div>

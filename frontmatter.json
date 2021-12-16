@@ -6,5 +6,6 @@
     {
       "path": "[[workspace]]/content"
     }
-  ]
+  ],
+  "frontMatter.content.autoUpdateDate": true
 }

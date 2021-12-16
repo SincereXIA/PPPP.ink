@@ -1,4 +1,4 @@
-import { filterPosts, sortPostsByStickyAndDate, sortPostsByDate } from '../helpers/postData'
+import { filterPosts, sortPostsByStickyAndDate, sortPostsByDate, filterBlogs } from '../helpers/postData'
 
 export default {
   computed: {
@@ -6,6 +6,23 @@ export default {
       let posts = this.$site.pages
 
       posts = filterPosts(posts, false)
+      sortPostsByStickyAndDate(posts)
+
+      return posts
+    },
+
+    $recoHomePosts() {
+      // let theTag = this.$tagesList.filter(
+      //   tag => {
+      //     return tag.name === "blog"
+      //   }
+      // )
+      // console.log(theTag[0].pages)
+      // let posts = theTag[0].pages
+      let posts = this.$site.pages
+      
+      posts = filterPosts(posts, false)
+      posts = filterBlogs(posts)
       sortPostsByStickyAndDate(posts)
 
       return posts

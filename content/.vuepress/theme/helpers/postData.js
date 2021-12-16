@@ -18,6 +18,16 @@ export function filterPosts (posts, isTimeline) {
   return posts
 }
 
+export function filterBlogs (posts) {
+  posts = posts.filter((item, index) => {
+    if (item.path.startsWith("/blogs/") || item.path.startsWith("/private/")) {
+      return true
+    }
+    return false
+  })
+  return posts
+}
+
 // 排序博客数据
 export function sortPostsByStickyAndDate (posts) {
   posts.sort((prev, next) => {
