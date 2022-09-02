@@ -10,9 +10,15 @@ keywords:
   - 阅读器
   - Android
   - 字体
-lastmod: 2022-09-01T12:45:09.862Z
-publish: false
+lastmod: 2022-09-02T02:59:57.367Z
+publish: true
 ---
+
+万物 Magisk
+
+![2022-09-02-1662087577-gRP3w8](https://static.sumblog.cn/Pic/2022-09-02-1662087577-gRP3w8.png)
+
+<!-- more -->
 
 ## 起因
 
@@ -42,6 +48,13 @@ publish: false
 ```
 http://data.onyx-international.cn/api/firmware/update?where={%22buildNumber%22:0,%22buildType%22:%22user%22,%22deviceMAC%22:%22%22,%22lang%22:%22zh_CN%22,%22model%22:%22Leaf%22,%22submodel%22:%22%22,%22fingerprint%22:%22%22}
 ```
+
+会得到以下结果：
+
+![2022-09-02-1662086513-R2EZOv](https://static.sumblog.cn/Pic/2022-09-02-1662086513-R2EZOv.png)
+
+其中，`downloadUrlList` 字段记录了固件的下载链接。
+
 可以将其中的 "model" 属性值调整为其他设备的 ID，就可以下载到其他设备的最新固件
 
 固件下载好后，来这里下载好解密脚本：<https://github.com/Hagb/decryptBooxUpdateUpx> 装好 python 环境
@@ -51,3 +64,25 @@ http://data.onyx-international.cn/api/firmware/update?where={%22buildNumber%22:0
 解压后就拿到了我们需要的 boot.img
 
 ![2022-09-01-1662036275-vgRxrn](https://static.sumblog.cn/Pic/2022-09-01-1662036275-vgRxrn.png)
+
+## 2. 使用 Magisk 修补 boot.img 
+
+1. 给任意一台 Android 设备安装好 Magisk APP: <https://github.com/topjohnwu/Magisk/releases>
+2. 将上文提取出的 boot.img 发送给 Android 设备，打开手机 Magisk 应用 > 安装 > 选项中只勾选保持系统分区加密 > 选择并修补一个文件 > 选择复制进去的 boot.img > 开始。等待滚动的命令行显示 All Done
+3. 将生成的 `magisk_patched-xxxxxx.img` 发送给 PC
+
+## 3. 使用修补过的 boot.img 引导启动文石阅读器
+
+1. 文石 Leaf 进入 fastboot 模式，`fastboot boot magisk_patched-xxxxxxx.img`，等待设备重新启动
+2. 重启之后进入 magisk，可以看到现在设备已经获得了 root 权限，但这只是临时的
+3. 确认启动引导没有问题后，打开 Magisk App 中选择安装 > 直接安装，永久修补 boot 镜像。
+
+至此，文石 leaf Root 成功
+
+![2022-09-02-1662087429-O2pwcq](https://static.sumblog.cn/Pic/2022-09-02-1662087429-O2pwcq.png)
+
+## 4. 修改系统字体
+
+拥有 Magisk 之后，修改系统字体就很简单，只需要找一些包含多字重的字体模块刷入即可，一些字体模块可以在这里下载：<https://magisk.suchenqaq.club/MagiskModule/Font.php>
+
+![2022-09-02-1662087378-gaOOyG](https://static.sumblog.cn/Pic/2022-09-02-1662087378-gaOOyG.png)
