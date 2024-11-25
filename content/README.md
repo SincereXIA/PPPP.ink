@@ -1,6 +1,6 @@
 ---
 home: true
-heroText: PPPP.ink 粉墨
+heroText: PPPP.ink 粉墨 - 粉墨日记
 tagline: PPPP.ink is a Personal Private Playground
 # heroImage: /hero.png
 # heroImageStyle: {
@@ -19,7 +19,7 @@ isShowTitleInHome: false
 actionText: Read
 actionLink: /views/other/guide
 features:
-- title: PPPP.ink 粉墨
+- title: PPPP.ink 粉墨 - 粉墨日记
   details: PPPP.ink is Personal Private Playground
 permalink: /
 ---
