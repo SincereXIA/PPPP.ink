@@ -9,7 +9,7 @@ const sortFn = (a, b) => {
 }
 
 module.exports = {
-  "title": "PPPP.ink 粉墨",
+  "title": "PPPP.ink 粉墨 - 粉墨日记",
   "description": "PPPP.ink is Personal Private Playground",
   "dest": "public",
   "head": [
