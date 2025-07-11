@@ -1,0 +1,182 @@
+{
+  "main": {
+    "id": "3ebfd5e0baf53a88",
+    "type": "split",
+    "children": [
+      {
+        "id": "946f502726822f84",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "b854c7da96c24359",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "blogs/12-解决 clion remote development 无法通过 root 运行.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "12-解决 clion remote development 无法通过 root 运行"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "8aa171a2a32cb5b5",
+    "type": "split",
+    "children": [
+      {
+        "id": "ae2a2896473da131",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "47f127fb872e29f6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "0de97416fc65356a",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "80c1bd12acc6f4aa",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 685.5
+  },
+  "right": {
+    "id": "efb344b8fd8812c8",
+    "type": "split",
+    "children": [
+      {
+        "id": "1e10d765444363b7",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f48b2ae6f472ac9c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "blogs/12-解决 clion remote development 无法通过 root 运行.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "12-解决 clion remote development 无法通过 root 运行 的反向链接列表"
+            }
+          },
+          {
+            "id": "046c9ea3d1e66fc9",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "blogs/12-解决 clion remote development 无法通过 root 运行.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "12-解决 clion remote development 无法通过 root 运行 的出链列表"
+            }
+          },
+          {
+            "id": "fb710e31c4c51126",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "f4647633a6066454",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "blogs/12-解决 clion remote development 无法通过 root 运行.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "12-解决 clion remote development 无法通过 root 运行 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false
+    }
+  },
+  "active": "b854c7da96c24359",
+  "lastOpenFiles": [
+    "blogs/attachments/Pasted image 20250711153810.png",
+    "blogs/attachments/Pasted image 20250711155909.png",
+    "blogs/12-解决 clion remote development 无法通过 root 运行.md",
+    "blogs/attachments/Pasted image 20250711155929.png",
+    "blogs/11-文石 Boox Leaf Root & 修改字体.md",
+    "blogs/8-鹅厂实习面试经历.md",
+    "blogs/9-再见 2021 & 你好 Tencent.md",
+    "blogs/attachments"
+  ]
+}
