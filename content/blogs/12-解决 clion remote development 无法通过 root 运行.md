@@ -1,13 +1,13 @@
 ---
 title: 解决 clion remote development 无法通过 root 运行
-date: '2025-7-11T15:49:30.841Z'
+date: 2025-07-11T15:49:30.841Z
 autoIgnore: true
 categories:
-    - 帮助中心
+  - 帮助中心
 tags:
-    - blog
+  - blog
 keywords:
-    - 开发
+  - 开发
 ---
 
 ## 1. 现象
