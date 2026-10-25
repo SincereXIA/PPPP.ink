@@ -1,7 +1,7 @@
 {
   "$schema": "https://frontmatter.codes/frontmatter.schema.json",
   "frontMatter.framework.id": "other",
-  "frontMatter.content.publicFolder": "",
+  "frontMatter.content.publicFolder": "content/public",
   "frontMatter.content.pageFolders": [
     {
       "path": "[[workspace]]/content"

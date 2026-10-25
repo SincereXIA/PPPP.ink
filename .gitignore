@@ -6,3 +6,5 @@ package-lock.json
 /public
 /content/.vuepress/secret.js
 /content/private
+/content/.vuepress/
+**/node_modules/

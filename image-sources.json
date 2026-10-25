@@ -430,16 +430,6 @@
     ]
   },
   {
-    "source": "https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png",
-    "retrievedFrom": "https://img.alicdn.com/tfs/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png",
-    "local": "/images/TB1..50QpXXXXX7XpXXXXXXXXXX-40-40.png",
-    "sha256": "974bbcc14bfad5995a138aedb25584422ea73ce59a2b21730da38b2c139f2692",
-    "bytes": 2330,
-    "references": [
-      "content/.vuepress/theme/components/Footer.vue"
-    ]
-  },
-  {
     "source": "https://static.sumblog.cn/Pic/2021-09-26-1632624396-5h9Rxy.png",
     "retrievedFrom": "http://static.sumblog.cn/Pic/2021-09-26-1632624396-5h9Rxy.png",
     "local": "/images/2021-09-26-1632624396-5h9Rxy.png",

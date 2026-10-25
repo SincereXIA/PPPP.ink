@@ -1,0 +1,26 @@
+name: Rebuild website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger website build for this content revision
+        env:
+          GH_TOKEN: ${{ secrets.SITE_WORKFLOW_TOKEN }}
+          SITE_REPOSITORY: ${{ vars.SITE_REPOSITORY || 'SincereXIA/PPPP.ink-site' }}
+          CONTENT_SHA: ${{ github.sha }}
+        run: |
+          if [ -z "$GH_TOKEN" ]; then
+            echo '::error::Set SITE_WORKFLOW_TOKEN with Actions: write permission on the website repository.'
+            exit 1
+          fi
+          gh workflow run deploy.yml --repo "$SITE_REPOSITORY" --ref main \
+            -f content_sha="$CONTENT_SHA"
