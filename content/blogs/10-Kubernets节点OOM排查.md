@@ -31,7 +31,7 @@ publish: true
 
 联系能连上远程控制台的 BW 兄，发现了这些节点故障的原因：
 
-![2022-01-09-1641693199-fMdgnH](https://static.sumblog.cn/Pic/2022-01-09-1641693199-fMdgnH.png)
+![2022-01-09-1641693199-fMdgnH](/images/2022-01-09-1641693199-fMdgnH.png)
 
 节点重启后，查看一下 OOM 日志：
 
@@ -39,7 +39,7 @@ publish: true
 egrep -i -r 'killed process' /var/log
 ```
 
-![2022-01-09-1641693399-rSpcz7](https://static.sumblog.cn/Pic/2022-01-09-1641693399-rSpcz7.png)
+![2022-01-09-1641693399-rSpcz7](/images/2022-01-09-1641693399-rSpcz7.png)
 
 可以看到，大量的系统进程被杀死，k8s 的高可用代理 `haproxy` 赫然在列。所以，原因找到了！因为我的 `haproxy` 没有配置对，导致内存占用过大，触发了 OOM，由于 `haproxy` 挂掉之后，Worker 节点无法连接到 master，从而显示为 NotReady。
 
@@ -57,7 +57,7 @@ egrep -i -r 'killed process' /var/log
 systemctl status haproxy
 ```
 
-![2022-01-09-1641694030-AP7TCW](https://static.sumblog.cn/Pic/2022-01-09-1641694030-AP7TCW.png)
+![2022-01-09-1641694030-AP7TCW](/images/2022-01-09-1641694030-AP7TCW.png)
 
 看一下这个 cgroup 的限制
 
@@ -66,17 +66,17 @@ cd /sys/fs/cgroup/memory/system.slice/
 cat haproxy.service/memory.limit_in_bytes
 ```
 
-![2022-01-09-1641694149-LXyXTJ](https://static.sumblog.cn/Pic/2022-01-09-1641694149-LXyXTJ.png)
+![2022-01-09-1641694149-LXyXTJ](/images/2022-01-09-1641694149-LXyXTJ.png)
 
 `9223372036854771712` 这么大的内存，没啥问题啊。
 
 那只能看看上一级的内存限制了：
 
-![2022-01-09-1641694260-U9vMOp](https://static.sumblog.cn/Pic/2022-01-09-1641694260-U9vMOp.png)
+![2022-01-09-1641694260-U9vMOp](/images/2022-01-09-1641694260-U9vMOp.png)
 
 `536870912` 字节！，问题找到了，整个 `system.slice` 被限制到了 0.5 G ! 我们验证一下：
 
-![2022-01-09-1641694357-lituMP](https://static.sumblog.cn/Pic/2022-01-09-1641694357-lituMP.png)
+![2022-01-09-1641694357-lituMP](/images/2022-01-09-1641694357-lituMP.png)
 
 果然！`Memory: 511.7M (limit: 512.0M)`，这么大的内存他不用，把整个系统进程的可用内存限制在了 0.5G，不到整个节点内存的 1/200
 
@@ -89,7 +89,7 @@ systemctl set-property system.slice MemoryLimit=infinity
 
 去除了对 system 的 CPU 和内存限制，再看看
 
-![2022-01-09-1641694533-aE9XHW](https://static.sumblog.cn/Pic/2022-01-09-1641694533-aE9XHW.png)
+![2022-01-09-1641694533-aE9XHW](/images/2022-01-09-1641694533-aE9XHW.png)
 
 诶，限制没有了，好了！
 
@@ -105,7 +105,7 @@ systemctl set-property system.slice MemoryLimit=infinity
 
 仔细查找我安装 k8s 的配置和脚本，在一个不起眼的地方发现了一个嫌疑人
 
-![2022-01-09-1641694868-KyLH4C](https://static.sumblog.cn/Pic/2022-01-09-1641694868-KyLH4C.png)
+![2022-01-09-1641694868-KyLH4C](/images/2022-01-09-1641694868-KyLH4C.png)
 
 ```bash
 # 节点资源预留
@@ -123,7 +123,7 @@ systemReservedCgroup: /system.slice
 
 `512M`！除了这里，我再也找不到类似的内存限制了，和 system.slice 一起限制的还有 kube.slice，我们也来看看他：
 
-![2022-01-09-1641696175-gIVG4j](https://static.sumblog.cn/Pic/2022-01-09-1641696175-gIVG4j.png)
+![2022-01-09-1641696175-gIVG4j](/images/2022-01-09-1641696175-gIVG4j.png)
 
 果然 `256M`!，看到这里，这个嫌疑基本实锤了！让我苦苦寻找了三天的问题，就是他！
 

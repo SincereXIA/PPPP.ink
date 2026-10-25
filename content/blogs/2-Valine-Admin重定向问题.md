@@ -25,12 +25,12 @@ tags:
 
 问题表现如下：
 
-![2021-06-29-1624928829-iLfeUR](https://static.sumblog.cn/Pic/2021-06-29-1624928829-iLfeUR.png)
+![2021-06-29-1624928829-iLfeUR](/images/2021-06-29-1624928829-iLfeUR.png)
 
 当访问 Valine Admin 后台时，不断重定向到 https 协议访问链接，即使是使用 https 协议直接访问也是如此。
 
 搜索全网，似乎只有[这位老哥](https://reinness.com/views/technology-sharing/vuepress/#%E5%AE%8C%E7%BB%93%E6%92%92%E8%8A%B1)遇到了和我一样的问题：
-![2021-06-29-1624929439-8jdkeT](https://static.sumblog.cn/Pic/2021-06-29-1624929439-8jdkeT.png)
+![2021-06-29-1624929439-8jdkeT](/images/2021-06-29-1624929439-8jdkeT.png)
 
 ## 原因排查
 
@@ -64,4 +64,4 @@ app.enable('trust proxy');
 
 重新部署之后，问题解决：
 
-![2021-06-29-1624929827-VAE3xw](https://static.sumblog.cn/Pic/2021-06-29-1624929827-VAE3xw.png)
+![2021-06-29-1624929827-VAE3xw](/images/2021-06-29-1624929827-VAE3xw.png)

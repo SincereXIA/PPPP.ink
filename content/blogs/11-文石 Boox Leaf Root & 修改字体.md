@@ -16,7 +16,7 @@ publish: true
 
 万物 Magisk
 
-![2022-09-02-1662087856-zBW1I2](https://static.sumblog.cn/Pic/2022-09-02-1662087856-zBW1I2.png)
+![2022-09-02-1662087856-zBW1I2](/images/2022-09-02-1662087856-zBW1I2.png)
 
 <!-- more -->
 
@@ -30,7 +30,7 @@ publish: true
 
 然而，令人不解的是，文石的系统字体居然默认是圆体，而且系统不支持自定义字体，这就让人很难受，不知道他们为什么要把字体做成圆体，实在欣赏不来，文石不但改了 Android 的默认字体，而且自带的字体居然是单字重的！对于调用了系统自带字体的 APP，阅读体验很差。
 
-![2022-09-01-1662035336-3wphsR](https://static.sumblog.cn/Pic/2022-09-01-1662035336-3wphsR.png)
+![2022-09-01-1662035336-3wphsR](/images/2022-09-01-1662035336-3wphsR.png)
 
 虽然可以使用 “隐藏的设置项” 等 APP，调用原生 Android 的系统设置，但仍然无法调节系统默认字体，因此尝试获取 Leaf 的 Root 权限，通过 Magisk 模块的方式，修改系统字体。
 
@@ -51,7 +51,7 @@ http://data.onyx-international.cn/api/firmware/update?where={%22buildNumber%22:0
 
 会得到以下结果：
 
-![2022-09-02-1662086513-R2EZOv](https://static.sumblog.cn/Pic/2022-09-02-1662086513-R2EZOv.png)
+![2022-09-02-1662086513-R2EZOv](/images/2022-09-02-1662086513-R2EZOv.png)
 
 其中，`downloadUrlList` 字段记录了固件的下载链接。
 
@@ -63,7 +63,7 @@ http://data.onyx-international.cn/api/firmware/update?where={%22buildNumber%22:0
 
 解压后就拿到了我们需要的 boot.img
 
-![2022-09-01-1662036275-vgRxrn](https://static.sumblog.cn/Pic/2022-09-01-1662036275-vgRxrn.png)
+![2022-09-01-1662036275-vgRxrn](/images/2022-09-01-1662036275-vgRxrn.png)
 
 ## 2. 使用 Magisk 修补 boot.img 
 
@@ -79,10 +79,10 @@ http://data.onyx-international.cn/api/firmware/update?where={%22buildNumber%22:0
 
 至此，文石 leaf Root 成功
 
-![2022-09-02-1662087429-O2pwcq](https://static.sumblog.cn/Pic/2022-09-02-1662087429-O2pwcq.png)
+![2022-09-02-1662087429-O2pwcq](/images/2022-09-02-1662087429-O2pwcq.png)
 
 ## 4. 修改系统字体
 
 拥有 Magisk 之后，修改系统字体就很简单，只需要找一些包含多字重的字体模块刷入即可，一些字体模块可以在这里下载：<https://magisk.suchenqaq.club/MagiskModule/Font.php>
 
-![2022-09-02-1662087378-gaOOyG](https://static.sumblog.cn/Pic/2022-09-02-1662087378-gaOOyG.png)
+![2022-09-02-1662087378-gaOOyG](/images/2022-09-02-1662087378-gaOOyG.png)

@@ -16,7 +16,7 @@ tags:
 
 该网站支持各个平台 favicon 的生成，甚至支持效果预览：
 
-![2021-07-07-1625662550-n14V0r](https://static.sumblog.cn/Pic/2021-07-07-1625662550-n14V0r.png)
+![2021-07-07-1625662550-n14V0r](/images/2021-07-07-1625662550-n14V0r.png)
 
 对 favicon 的详细介绍可以看这里 [详细介绍HTML favicon尺寸 格式 制作等相关知识](https://www.zhangxinxu.com/wordpress/2019/06/html-favicon-size-ico-generator/)
 

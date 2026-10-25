@@ -13,7 +13,7 @@ keywords:
 
 最近网盘项目需要一个通用编程接口，因此写了一个 Python 库对网盘操作进行封装：[jcs-sdk](https://pypi.org/project/jcs-sdk/)，这里记录一下构建并发布一个 Python 库的方法。
 
-![2021-07-27-1627356938-h7i6ra](https://static.sumblog.cn/Pic/2021-07-27-1627356938-h7i6ra.png)
+![2021-07-27-1627356938-h7i6ra](/images/2021-07-27-1627356938-h7i6ra.png)
 
 <!-- more -->
 

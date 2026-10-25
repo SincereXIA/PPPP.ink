@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "reco_luan",
   "scripts": {
+    "check:images": "node script/check-images.js",
     "dev": "vuepress dev content --open --host \"localhost\"",
     "build": "vuepress build content"
   },

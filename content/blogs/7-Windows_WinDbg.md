@@ -13,7 +13,7 @@ lastmod: '2021-08-19T02:58:35.290Z'
 
 记录一次因为驱动问题引发 Windows 蓝屏的排查过程
 
-![](https://i.loli.net/2021/08/19/nuTkm8G1HesO6KM.png)
+![](/images/nuTkm8G1HesO6KM.png)
 
 <!-- more -->
 
@@ -27,11 +27,11 @@ lastmod: '2021-08-19T02:58:35.290Z'
 
 > 当 Microsoft Windows 10 系统遇到影响其自身安全运行的情况时，产品将自动停止运行。这种 “自动停止运行” 的现象被称为 “Bug Check” (中文名称为 “错误检查”、“系统崩溃”、“内核错误” 或 “停止错误”)。通常情况下，Windows 10 系统将会在自动停止运行前面向电脑屏幕显示 蓝色 背景颜色的错误提示信息，因此这种现象也被称为电脑 “蓝屏” 异常。
 
-![](https://i.loli.net/2021/08/19/cFkN4fVnrPwjH2e.png)
+![](/images/cFkN4fVnrPwjH2e.png)
 
 在系统崩溃时，Windows 操作系统会收集当前内存中的进程信息，自动创建日志（Dump）文件，崩溃后的日志信息会记录在：`C:\Windows\Minidump` 目录下。当开启了 “崩溃转储” 功能后，系统还会生成 `C:\WINDOWS\MEMORY.DMP` 文件，该文件包含了系统当前内存（&虚拟内存）中的全部有效数据，该 Dump 文件体积通常较大，可以看到，我这次系统崩溃创建出的内存镜像高达 1.8 GB
 
-![Memory.dmp](https://i.loli.net/2021/08/19/um6d2FvBo7cLjnl.png)
+![Memory.dmp](/images/um6d2FvBo7cLjnl.png)
 
 记录 MEMORY.DMP 的方法为：控制面板\所有控制面板项\系统  高级系统设置→启动和故障修复 的 ‘设置’→勾选‘将事件写入系统日志’
 
@@ -51,7 +51,7 @@ WinDbg 是对 KD（内核调试器）以及 NTSD（用户模式调试器）的�
 
 WinDbg 可以从 [这里](https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools) 下载：
 
-![](https://i.loli.net/2021/08/19/t2EWhPMraoTZmj8.png)
+![](/images/t2EWhPMraoTZmj8.png)
 
 目前，WinDbg 推出了 Preview 版本，改版本已经上架到了 Win10 应用商店。后文将使用 Preview 版本的 WinDbg 进行 Dump 文件的分析。
 
@@ -68,7 +68,7 @@ WinDbg 可以从 [这里](https://docs.microsoft.com/en-us/windows-hardware/driv
 
 为了更详细的分析，需要引入网络上的符号文件，因此，将 `.sympath` 设置为 `SRV*C:\Symbols*http://msdl.microsoft.com/download/symbols`
 
-![](https://i.loli.net/2021/08/19/sietgAwSEq2KIvb.png)
+![](/images/sietgAwSEq2KIvb.png)
 
 ### 加载 Dump 文件
 
@@ -79,11 +79,11 @@ WinDbg 可以从 [这里](https://docs.microsoft.com/en-us/windows-hardware/driv
 
 当所需符号文件加载完毕后，会给出一个初步的诊断结果:
 
-![](https://i.loli.net/2021/08/19/yUVWu4PcATHlvq2.png)
+![](/images/yUVWu4PcATHlvq2.png)
 
 结果中给出了引发崩溃的具体汇编代码，但对于定位问题几乎毫无帮助。这时，我们点击输出窗口中的蓝色 `!analyze -v` 链接，会触发详细信息输出。
 
-![](https://i.loli.net/2021/08/19/OXcUeVaWSJjPE4s.png)
+![](/images/OXcUeVaWSJjPE4s.png)
 
 首先工具会给出一个错误代码，在这里给出的是 `DRIVER_IRQL_NOT_LESS_OR_EQUAL (d1)`，并且在下方给出了该错误代码的具体说明：
 
@@ -97,13 +97,13 @@ caused by drivers using improper addresses.
 
 具体的驱动程序是哪个呢？继续向下浏览，我们可以看到：
 
-![](https://i.loli.net/2021/08/19/xjqWVuObK4drCIy.png)
+![](/images/xjqWVuObK4drCIy.png)
 
 罪魁祸首找到了！正是 `rtux64w10` 这个内核模块。
 
 该内核模块是 Realtek USB Ethernet Controller （USB无线网卡）的驱动程序。我们打开设备管理器再次确认：
 
-![](https://i.loli.net/2021/08/19/KMdJos917L4DG3O.png)
+![](/images/KMdJos917L4DG3O.png)
 
 确凿无误了，正是有线网卡驱动引发的蓝屏问题，难怪蓝屏常常发生在下载文件的过程中。
 
