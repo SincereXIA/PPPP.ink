@@ -430,36 +430,6 @@
     ]
   },
   {
-    "source": "https://static.sumblog.cn/Pic/2021-09-26-1632624396-5h9Rxy.png",
-    "retrievedFrom": "http://static.sumblog.cn/Pic/2021-09-26-1632624396-5h9Rxy.png",
-    "local": "/images/2021-09-26-1632624396-5h9Rxy.png",
-    "sha256": "bc4357f511ce16af936ff9dd8a82bb2b14029b7f900747bdf861adaec72465f3",
-    "bytes": 19538,
-    "references": [
-      "content/docs/leetcode/3-simulation.md"
-    ]
-  },
-  {
-    "source": "https://static.sumblog.cn/Pic/2021-09-26-1632624436-GDkDq1.png",
-    "retrievedFrom": "http://static.sumblog.cn/Pic/2021-09-26-1632624436-GDkDq1.png",
-    "local": "/images/2021-09-26-1632624436-GDkDq1.png",
-    "sha256": "215cd759b8f572f21498c95eca9bf2e7278b97f110191637106888da06e60531",
-    "bytes": 26783,
-    "references": [
-      "content/docs/leetcode/3-simulation.md"
-    ]
-  },
-  {
-    "source": "https://static.sumblog.cn/Pic/2021-07-21-1626835725-4RQ6mv.jpg",
-    "retrievedFrom": "http://static.sumblog.cn/Pic/2021-07-21-1626835725-4RQ6mv.jpg",
-    "local": "/images/2021-07-21-1626835725-4RQ6mv.jpg",
-    "sha256": "30b44c310b942bc1c9b5984edb4663a7821d95f214fb62e835b04d177a18b23e",
-    "bytes": 36464,
-    "references": [
-      "content/docs/rCore/1-base.md"
-    ]
-  },
-  {
     "source": "http://media.sumblog.cn/uPic/2021-01-0720151015164207766qvmWuU.jpeg",
     "retrievedFrom": "http://media.sumblog.cn/uPic/2021-01-0720151015164207766qvmWuU.jpeg",
     "local": "/images/2021-01-0720151015164207766qvmWuU.jpeg",
@@ -667,16 +637,6 @@
     "bytes": 75530,
     "references": [
       "content/blogs/diary/2021/0921-mid-autumn.md"
-    ]
-  },
-  {
-    "source": "https://static.sumblog.cn/Pic/2021-07-02-1625194519-4yI7JJ.jpg",
-    "retrievedFrom": "http://static.sumblog.cn/Pic/2021-07-02-1625194519-4yI7JJ.jpg",
-    "local": "/images/2021-07-02-1625194519-4yI7JJ.jpg",
-    "sha256": "58ce7f1a043fa2d0e64095c620bbb562f82af12dff8204a14aba13a6dac77141",
-    "bytes": 435686,
-    "references": [
-      "content/blogs/diary/2021/0701-7-1.md"
     ]
   },
   {
