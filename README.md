@@ -7,15 +7,16 @@ lastmod: '2021-12-10T02:30:30.529Z'
 
 SincereXIA 的个人博客
 
-Powered by: [VuePress](https://vuepress.vuejs.org/)
-Theme: [vuepress-theme-reco](https://vuepress-theme-reco.recoluan.com/)
+Powered by: [Astro](https://astro.build/)
+Theme: [Retypeset](https://github.com/radishzzz/astro-theme-retypeset)
 
 ## 仓库分工
 
-本仓库只维护正文、图片、附件和内容编辑配置。VuePress、主题、组件、依赖和部署流水线已迁往 [PPPP.ink-site](https://github.com/SincereXIA/PPPP.ink-site)。不再引用 `Private.PPPP.ink`。
+本仓库只维护正文、图片、附件和内容编辑配置。Astro、Retypeset 主题、组件、依赖和部署流水线已迁往 [PPPP.ink-site](https://github.com/SincereXIA/PPPP.ink-site)。不再引用 `Private.PPPP.ink`。
 
 ```text
-content/README.md      首页内容元数据
+content/README.md      历史首页配置（保留）
+content/about.md       关于页正文
 content/blogs/         博文和日记（包括文章附件）
 content/docs/          专题文档与学习笔记
 content/public/images/ 文章图片
@@ -27,6 +28,10 @@ image-sources.json     图片来源、引用和 SHA-256 校验值
 ## 写作与图片
 
 直接编辑 `content/` 下的 Markdown。文章图片保存在 `content/public/images/`，正文继续使用 `/images/文件名` 引用，现有文章链接无需修改。其他附件可以继续放在文章附近的 `attachments/` 目录。
+
+首页缩略图默认使用正文第一张本地图片；可在 frontmatter 设置 `cover: /images/文件名` 指定封面，或设置 `cover: false` 关闭。正文与附件路径保持原有写法。
+
+`publish: false`、`draft: true` 或带有非空 `keys` 的文章不会被发布或收录到搜索、RSS、站点地图。旧文章的原始 `.html` 链接由框架仓库映射保留；不要为了迁移修改正文文件名。
 
 原始图床地址、恢复时的来源和 SHA-256 校验值记录在根目录的 `image-sources.json`。
 
